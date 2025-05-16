@@ -1,55 +1,80 @@
-h1{
- text-align:center;
- font-family:sans-serif;
-}
+h1 {
+            text-align: center;
+            font-family: sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-header{
-  border-bottom:5px black solid;
-}
+        header {
+            border-bottom: 5px black solid;
+            background-color: #f0f0f0;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.sigma{
-  float:right;
-}
+        .parallax {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.konver{
-  text-align:right;
-  font-family:sans-serif;
-  border:3px black solid;
-  border-radius:10px;
-  width:300px;
-}
+        .parallax::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') fixed;
+            background-size: cover;
+            filter: blur(3px) brightness(0.7);
+            z-index: -1;
+            transform: translateZ(0);
+        }
 
+        .content {
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
 
-.sigma1{
-  float:right;
-}
+        .sigma, .sigma1, .plavil {
+            float: right;
+            width: 300px;
+            height: auto;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-.bur {
-  font-family:sans-serif;
-  border:3px black solid;
-  border-radius:10px;
-  width:300px;
-}
+        .bur, .konver, .konver1, .plav {
+            font-family: sans-serif;
+            border: 3px black solid;
+            border-radius: 10px;
+            width: 300px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
 
-.konver1{
-  text-align:right;
-  font-family:sans-serif;
-  border:3px black solid;
-  border-radius:10px;
-  width:300px;
-  margin-top:70px;
-}
+        .bur {
+            float: left;
+        }
 
-.plav{
-  text-align:right;
-  font-family:sans-serif;
-  border:3px black solid;
-  border-radius:10px;
-  width:300px;
-  margin-top:70px;
-}
+        .konver, .konver1 {
+            float: right;
+            text-align: right;
+        }
 
-.plavil{
-  float:right;
-}
+        .plav {
+            float: right;
+            text-align: right;
+        }
 
+        /* Очистка float */
+        .content::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
